@@ -1,12 +1,10 @@
 Project for grabbing inventory listings from Biomimetics wiki and
-dumping them to a CSV file. This project needs to be run from the
-login.eecs.berkeley.edu server.
+dumping them to a CSV file. To use this you will need to have a login to
+login.eecs.berkeley.edu.
 
-Before running, create a symbolic link to /project/eecs/fearing/wiki/wiki.d
-named 'data' in this directory.
-
-Then run ./inventory_grabber.py. It should parse all of the inventory
-pages in the wiki, and create a file 'inventory.csv'. This file uses
+Typing 'make' should run everything for you. This includes pulling all
+of the relevant files from the wiki server, parsing the data fields,
+and creating the output file 'inventory.csv'. This file uses
 semicolons as delimiters to allow for lists as attribute values. The first
 row is a list of all attribute names encountered in the inventory pages. 
 Subsequent rows are entries for each inventory page, beginning with the

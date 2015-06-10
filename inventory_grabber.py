@@ -17,7 +17,10 @@ def wiki_to_dict(wiki_str):
     d.update(attr_list)
   return d
 
-def grab_inventory():
+# Parse inventory files from ./data to create template and items
+# template is an ordered dictionary that has all attributes of the data as keys
+# items is a list of ordered dictionaries, one for each item in the inventory
+def parse_inventory():
   # Parse template to get default attributes and order
   template_filename = 'data/INV.Template'
   template_file = open(template_filename)
@@ -40,6 +43,9 @@ def grab_inventory():
   
   return template, items
 
+# Save template and items dictionaries as a CSV file, using the keys of
+# template as the column headers, and creating one row for each item in
+# items
 def dict_to_csv(template, items):
   filename = 'inventory.csv'
   cfile = open(filename,'w')
@@ -53,5 +59,5 @@ def dict_to_csv(template, items):
   cfile.close()
   
 if __name__ == '__main__':
-  template,items = grab_inventory()
-  dict_to_cvs(template,items)
+  template,items = parse_inventory()
+  dict_to_csv(template,items)
