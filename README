@@ -1,11 +1,14 @@
 Project for grabbing inventory listings from Biomimetics wiki and
-dumping them to a CSV file. To use this you will need to have a login to
-login.eecs.berkeley.edu.
+dumping them to a CSV file. To use this you will need to have an EECS
+account on login.eecs.berkeley.edu.
 
-Typing 'make' should run everything for you. This includes pulling all
-of the relevant files from the wiki server, parsing the data fields,
-and creating the output file 'inventory.csv'. This file uses
-semicolons as delimiters to allow for lists as attribute values. The first
-row is a list of all attribute names encountered in the inventory pages. 
-Subsequent rows are entries for each inventory page, beginning with the
-inventory item number.
+Typing 'make USER=uname', where uname is your login.eecs username,
+should run everything for you. The script will prompt for your login.eecs
+password.
+
+This includes pulling all of the relevant files from the wiki server, 
+parsing the data fields, and creating the output file 'inventory.csv'.
+This file uses semicolons as delimiters to allow for lists as attribute
+values. The first row is a list of all attribute names encountered in the
+inventory pages. Subsequent rows are entries for each inventory page,
+beginning with the inventory item number.
